@@ -1,5 +1,11 @@
 local jiro = import '../../templates/jiro.libsonnet';
 
-jiro+ {
-  "config.json"+: import "config.jsonnet",
+jiro.newJiro("ee4j.jacc", "Jakarta Authorizaion") {
+  "config.json"+: {
+    jenkins+: {
+      plugins+: [
+        "copyartifact",
+      ],
+    },
+  }
 }
